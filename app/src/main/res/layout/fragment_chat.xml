@@ -30,7 +30,8 @@
         android:layout_centerVertical="true"
         android:text="Here you can see the community and nearest problems or routes."
         android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:id="@+id/textView" />
 
 
     <View
@@ -49,5 +50,7 @@
         android:layout_centerVertical="true"
         android:text="Here you can see the community and nearest problems or routes."
         android:textColor="@color/black" />
+
+
 
 </RelativeLayout>

@@ -17,26 +17,19 @@ public class ColoreableActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_coloreable);
+
         Intent intent = getIntent();
-        String picture = (String)getIntent().getExtras().get("image");
+        Bitmap image_bitmap = (Bitmap)getIntent().getExtras().get("image");
 
-
-        TextView tv = (TextView) findViewById(R.id.textViewColoreable);
-        if(tv != null)
-            tv.setText(picture);
-
-
-        File imgFile = new File(picture);
-        if(imgFile.exists()) {
-            Bitmap myBitMap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-            ImageView iv = (ImageView) findViewById(R.id.image_coloreable);
-
-            if (iv != null)
-                iv.setImageBitmap(myBitMap);
+        ImageView myImView = (ImageView) findViewById(R.id.image_coloreable);
+        if(image_bitmap != null){
+            myImView.setImageBitmap(image_bitmap);
+        } else {
+            myImView.setImageResource(R.drawable.no_image_found);
         }
 
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coloreable);
     }
 }

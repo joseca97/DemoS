@@ -916,13 +916,16 @@ public class Camera2BasicFragment extends Fragment
             }
             case R.id.editPh:{
                 if(taken){
-                    String path = mFile.toString();
                     CameraActivity cam = (CameraActivity) getActivity();
-                    cam.editPhotoFragmentLoader(path);
+                    Image im = mImageReader.acquireLatestImage();
+                    cam.editPhotoFragmentLoader(im);
                 } else {
                     showToast("Error, no has tomado la foto.");
                 }
                 break;
+            }
+            case R.id.button2:{
+
             }
         }
     }

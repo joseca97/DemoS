@@ -17,8 +17,14 @@
 package com.example.manuel.demos;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import java.io.File;
+import java.nio.ByteBuffer;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -34,9 +40,17 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
-    public void editPhotoFragmentLoader(String path){
+    public void editPhotoFragmentLoader(Image file){
+
+        //Bitmap myBitMap = BitmapFactory.decodeFile(file.getAbsolutePath());
+
+        ByteBuffer buffer = file.getPlanes()[0].getBuffer();
+        byte[] bytes = new byte[buffer.capacity()];
+        buffer.get(bytes);
+        Bitmap bitmapImage = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, null);
+
         Intent intent = new Intent(this, ColoreableActivity.class);
-        intent.putExtra("image", path);
+        intent.putExtra("image", bitmapImage);
         startActivity(intent);
     }
 

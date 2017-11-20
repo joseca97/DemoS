@@ -1,6 +1,10 @@
 package com.example.manuel.demos;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -13,6 +17,8 @@ import android.widget.TextView;
 import com.example.manuel.demos.adapter.MainPagerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -129,9 +135,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    Uri imageUri;
+    final int TAKE_PICTURE = 115;
+
     public void toCamera(View view){
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        File photoFile = new File(Environment.getExternalStorageDirectory(), "Photo.png");
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+
+        imageUri = Uri.fromFile(photoFile);
+        startActivityForResult(intent, TAKE_PICTURE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case TAKE_PICTURE:
+                if (resultCode == Activity.RESULT_OK) {
+                    Uri selectedImageUri = imageUri;
+                    //Do what ever you want
+                }
+        }
     }
 
 }
