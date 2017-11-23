@@ -901,7 +901,7 @@ public class Camera2BasicFragment extends Fragment
         switch (view.getId()) {
             case R.id.picture: {
                 takePicture();
-                Intent intent = new Intent(getActivity(), ColoreableActivity.class);
+                //Intent intent = new Intent(getActivity(), ColoreableActivity.class);
                 break;
             }
             case R.id.info: {

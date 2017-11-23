@@ -1,7 +1,10 @@
 package com.example.manuel.demos;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -10,6 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +22,10 @@ import com.example.manuel.demos.adapter.MainPagerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -157,6 +164,19 @@ public class MainActivity extends AppCompatActivity {
                     //Do what ever you want
                 }
         }
+    }
+
+
+    public void buttonColoreable(View v){
+        Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.no_image_found);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        Intent intent = new Intent(this, ColoreableActivity.class);
+        intent.putExtra("image", byteArray);
+        startActivity(intent);
     }
 
 }

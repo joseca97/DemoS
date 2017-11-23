@@ -34,4 +34,17 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="prompt_password">prompt_password</string>
+    <string name="name_problem">Problem Name:</string>
+    <string name="grade">Grade:</string>
+    <string name="coment">Comentario:</string>
+
+    <string-array name="grades">
+        <item>6a</item>
+        <item>6a+</item>
+        <item>6b</item>
+        <item>6b+</item>
+        <item>6c</item>
+        <item>6c+</item>
+        <item>7a</item>
+    </string-array>
 </resources>
