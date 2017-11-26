@@ -40,18 +40,8 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
-    public void editPhotoFragmentLoader(Image file){
+    public void editPhotoFragmentLoader(File file){
 
-        //Bitmap myBitMap = BitmapFactory.decodeFile(file.getAbsolutePath());
-
-        ByteBuffer buffer = file.getPlanes()[0].getBuffer();
-        byte[] bytes = new byte[buffer.capacity()];
-        buffer.get(bytes);
-        Bitmap bitmapImage = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, null);
-
-        Intent intent = new Intent(this, ColoreableActivity.class);
-        intent.putExtra("image", bitmapImage);
-        startActivity(intent);
     }
 
 

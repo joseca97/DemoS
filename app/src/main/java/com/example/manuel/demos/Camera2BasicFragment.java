@@ -25,6 +25,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
@@ -60,6 +62,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -850,6 +853,15 @@ public class Camera2BasicFragment extends Fragment
                     path = mFile.toString();
                     Log.d(TAG, path);
                     unlockFocus();
+
+                    Bitmap im = BitmapFactory.decodeFile(path);
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    im.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+
+                    Intent intent = new Intent(getActivity(), ColoreableActivity.class);
+                    intent.putExtra("image", byteArray);
+                    startActivity(intent);
                 }
             };
 
@@ -901,7 +913,7 @@ public class Camera2BasicFragment extends Fragment
         switch (view.getId()) {
             case R.id.picture: {
                 takePicture();
-                //Intent intent = new Intent(getActivity(), ColoreableActivity.class);
+
                 break;
             }
             case R.id.info: {
@@ -915,13 +927,7 @@ public class Camera2BasicFragment extends Fragment
                 break;
             }
             case R.id.editPh:{
-                if(taken){
-                    CameraActivity cam = (CameraActivity) getActivity();
-                    Image im = mImageReader.acquireLatestImage();
-                    cam.editPhotoFragmentLoader(im);
-                } else {
-                    showToast("Error, no has tomado la foto.");
-                }
+
                 break;
             }
             case R.id.button2:{

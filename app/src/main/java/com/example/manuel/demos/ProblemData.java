@@ -19,6 +19,8 @@ import com.example.manuel.demos.models.Boulder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.parceler.Parcels;
+
 import java.io.ByteArrayOutputStream;
 import java.util.Calendar;
 import java.util.Date;
@@ -30,7 +32,7 @@ public class ProblemData extends AppCompatActivity {
 
     String grade;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+    String username = user.getEmail();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +75,10 @@ public class ProblemData extends AppCompatActivity {
         bitIm.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
-        Boulder boulder = new Boulder(user, name.getText().toString() , Calendar.getInstance().getTime(), grade, com.getText().toString(), byteArray);
+        Boulder boulder = new Boulder(username, name.getText().toString() , Calendar.getInstance().getTime(), grade, com.getText().toString(), byteArray);
 
         Intent intent = new Intent(this, BoulderViewer.class);
-        intent.putExtra("boulder", boulder);
+        intent.putExtra("boulder", Parcels.wrap(boulder));
         startActivity(intent);
     }
 }

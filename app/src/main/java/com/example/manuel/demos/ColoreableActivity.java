@@ -63,8 +63,10 @@ public class ColoreableActivity extends Activity implements OnClickListener,
         choosenImageView.setOnTouchListener(this);
 
         if(getIntent().hasExtra("image")){
-            byte[] byteArray = getIntent().getByteArrayExtra("image");
-            bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            String im_path = getIntent().getStringExtra("image");
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+            bmp = BitmapFactory.decodeFile(im_path, options);
             try {
 //                BitmapFactory.Options bmpFactoryOptions = new BitmapFactory.Options();
 //                bmpFactoryOptions.inJustDecodeBounds = true;
@@ -75,12 +77,12 @@ public class ColoreableActivity extends Activity implements OnClickListener,
 //                bmp = BitmapFactory.decodeStream(getContentResolver().openInputStream(
 //                        imageFileUri), null, bmpFactoryOptions);
 
-                alteredBitmap = Bitmap.createBitmap(bmp.getWidth(), bmp
-                        .getHeight(), bmp.getConfig());
+                alteredBitmap = Bitmap.createBitmap(bmp.getWidth()*3/4, bmp
+                        .getHeight()*3/4, bmp.getConfig());
                 canvas = new Canvas(alteredBitmap);
                 paint = new Paint();
                 paint.setColor(color);
-                paint.setStrokeWidth(5);
+                paint.setStrokeWidth(10);
                 matrix = new Matrix();
                 canvas.drawBitmap(bmp, matrix, paint);
 
@@ -148,7 +150,7 @@ public class ColoreableActivity extends Activity implements OnClickListener,
             }
             case R.id.button_upload: {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                alteredBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                alteredBitmap.compress(CompressFormat.JPEG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
 
                 Intent intent = new Intent(this, ProblemData.class);
