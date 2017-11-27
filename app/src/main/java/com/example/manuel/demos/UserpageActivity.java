@@ -1,28 +1,16 @@
-package com.example.manuel.demos.fragment;
+package com.example.manuel.demos;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.manuel.demos.LoginActivity;
-import com.example.manuel.demos.MainActivity;
-import com.example.manuel.demos.R;
-import com.example.manuel.demos.SettingsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-/**
- * Created by manuel on 19/10/2017.
- */
-
-public class EmptyFragment extends BaseFragment {
+public class UserpageActivity extends AppCompatActivity {
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
@@ -30,19 +18,15 @@ public class EmptyFragment extends BaseFragment {
     private TextView userNameD;
     private ImageButton settingsButton;
 
-    public static EmptyFragment create() {
-        return new EmptyFragment();
-    }
 
     @Override
-    public int getLayoutResId() {
-        return R.layout.fragment_empty;
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_userpage);
 
-    @Override
-    public void inOnCreateView(View root, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //userNameD = (TextView) root.findViewById(R.id.userNameD);
-        settingsButton = (ImageButton) root.findViewById(R.id.settingsButton);
+
+        userNameD = (TextView) findViewById(R.id.userview);
+        settingsButton = (ImageButton)findViewById(R.id.settingsButton);
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();

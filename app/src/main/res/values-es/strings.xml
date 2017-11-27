@@ -37,6 +37,10 @@
     <string name="name_problem">Nombre del problema:</string>
     <string name="grade">Grado:</string>
     <string name="coment">Comentario:</string>
+    <string name="recent">Noticias recientes en tu zona</string>
+    <string name="ranking_position">Posicion en el ranking:</string>
+    <string name="number_of_boulders">Numero de bloques encadenados:</string>
+    <string name="points_text">Puntos:</string>
 
     <string-array name="grades">
         <item>6a</item>

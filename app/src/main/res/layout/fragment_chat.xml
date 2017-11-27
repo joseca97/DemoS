@@ -24,45 +24,179 @@
         android:textStyle="bold"
         android:id="@+id/textView2" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Here you can see the community and nearest problems or routes."
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:id="@+id/textView" />
+
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
-        android:background="@drawable/card_background">
+        android:background="@drawable/card_background"
+        android:id="@+id/view">
 
 
     </View>
+    <ImageButton
+        android:id="@+id/button_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="13dp"
+        android:onClick="takeImage"
+        app:srcCompat="@drawable/ic_camera_white_36dp" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@id/recent_text"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/ll1"
+        android:padding="5dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@color/light_background">
+
+                <ImageView
+                    android:id="@+id/im1"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/bloque1"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/tx1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/im1"
+                    android:layout_marginTop="10dp"
+                    android:text="New insane boulder in Moai Climbing (Albacete)"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_background"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/im2"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/bloque2"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/tx2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_below="@id/im2"
+                    android:layout_marginTop="10dp"
+                    android:text="Manuel Alfaro: Venir a Moai Climbing a probar este bloque"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_background"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/im3"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/bloque3"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/tx3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/im3"
+                    android:layout_marginTop="10dp"
+                    android:text="Jose Carlos Arinero: Reto a Manuel Alfaro a probar este bloque"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <TextView
+        android:id="@+id/recent_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/view"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Here you can see the community and nearest problems or routes."
-        android:textColor="@color/black" />
+        android:layout_marginTop="13dp"
+        android:text="@string/recent"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
+    <RelativeLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp">
 
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ranking"
+            android:id="@+id/button_ranking" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="12dp"
-        android:onClick="takeImage"
-        android:text="Camera" />
+        <ImageButton
+            android:id="@+id/button_trophy"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/trophy"/>
 
+        <ImageButton
+            android:id="@+id/button_account"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:onClick="toAccount"
+            android:src="@drawable/ic_accessibility_white_24dp" />
+    </RelativeLayout>
 
 </RelativeLayout>

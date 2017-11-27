@@ -245,4 +245,9 @@ public class MainActivity extends AppCompatActivity {
         return image;
     }
 
+    public void toAccount(View v){
+        Intent intent = new Intent(MainActivity.this, UserpageActivity.class);
+        startActivity(intent);
+    }
+
 }

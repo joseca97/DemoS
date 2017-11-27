@@ -35,7 +35,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <activity
@@ -58,8 +58,10 @@
             android:label="ColoreableActivity" />
         <activity android:name=".ProblemData" />
         <activity android:name=".BoulderViewer" />
-        <activity android:name=".FullViewActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".FullViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".UserpageActivity"></activity>
     </application>
 
 </manifest>
