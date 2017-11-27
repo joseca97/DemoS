@@ -82,7 +82,7 @@ public class ColoreableActivity extends Activity implements OnClickListener,
                 canvas = new Canvas(alteredBitmap);
                 paint = new Paint();
                 paint.setColor(color);
-                paint.setStrokeWidth(10);
+                paint.setStrokeWidth(20);
                 matrix = new Matrix();
                 canvas.drawBitmap(bmp, matrix, paint);
 
@@ -189,7 +189,7 @@ public class ColoreableActivity extends Activity implements OnClickListener,
                 canvas = new Canvas(alteredBitmap);
                 paint = new Paint();
                 paint.setColor(color);
-                paint.setStrokeWidth(5);
+                paint.setStrokeWidth(20);
                 matrix = new Matrix();
                 canvas.drawBitmap(bmp, matrix, paint);
 
