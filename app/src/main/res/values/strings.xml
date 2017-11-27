@@ -41,6 +41,7 @@
     <string name="ranking_position">Ranking position:</string>
     <string name="number_of_boulders">Number of ascent boulders:</string>
     <string name="points_text">Points:</string>
+    <string name="thumbnail">thumbnail</string>
 
 
     <string-array name="grades">

@@ -37,6 +37,15 @@ public class Boulder {
 
     }
 
+    public Boulder(String user, String name, Date date, String gra, String com) {
+        this.uploader = user;
+        this.date = date;
+        this.grade = gra;
+        this.comment = com;
+        this.name = name;
+
+    }
+
     public Boulder(String user, String name, Date date, String gra, String com, byte[] img) {
         this.uploader = user;
         this.date = date;

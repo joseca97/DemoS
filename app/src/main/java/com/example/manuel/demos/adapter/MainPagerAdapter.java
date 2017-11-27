@@ -22,11 +22,11 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
+            case 0:
+                return Camera2BasicFragment.newInstance();
             case 1:
                 //return EmptyFragment.create();
                 return ChatFragment.create();
-            case 0:
-                return Camera2BasicFragment.newInstance();
             case 2:
                 return StoriesFragment.create();
         }
