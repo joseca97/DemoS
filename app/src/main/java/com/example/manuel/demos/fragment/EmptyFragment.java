@@ -41,7 +41,7 @@ public class EmptyFragment extends BaseFragment {
 
     @Override
     public void inOnCreateView(View root, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        userNameD = (TextView) root.findViewById(R.id.userNameD);
+//        userNameD = (TextView) root.findViewById(R.id.userNameD);
         settingsButton = (ImageButton) root.findViewById(R.id.settingsButton);
 
         //get firebase auth instance
@@ -50,7 +50,7 @@ public class EmptyFragment extends BaseFragment {
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        userNameD.setText(user.getEmail());
+//        userNameD.setText(user.getEmail());
 
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
