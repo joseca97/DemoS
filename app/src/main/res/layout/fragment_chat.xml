@@ -52,15 +52,7 @@
         android:text="Here you can see the community and nearest problems or routes."
         android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_marginBottom="19dp"
-        android:onClick="buttonColoreable"
-        android:text="Button" />
+
 
     <Button
         android:id="@+id/button6"

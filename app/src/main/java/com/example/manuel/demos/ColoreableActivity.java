@@ -55,11 +55,11 @@ public class ColoreableActivity extends Activity implements OnClickListener,
         setContentView(R.layout.activity_coloreable);
 
         choosenImageView = (ImageView) this.findViewById(R.id.ChoosenImageView);
-        choosePicture = (Button) this.findViewById(R.id.ChoosePictureButton);
-        savePicture = (Button) this.findViewById(R.id.SavePictureButton);
+        //choosePicture = (Button) this.findViewById(R.id.ChoosePictureButton);
+        //savePicture = (Button) this.findViewById(R.id.SavePictureButton);
 
-        savePicture.setOnClickListener(this);
-        choosePicture.setOnClickListener(this);
+//        savePicture.setOnClickListener(this);
+//        choosePicture.setOnClickListener(this);
         choosenImageView.setOnTouchListener(this);
 
         if(getIntent().hasExtra("image")){

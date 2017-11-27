@@ -28,7 +28,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return Camera2BasicFragment.newInstance();
             case 2:
-                return StoriesFragment.create();
+                return EmptyFragment.create();
         }
 
         return null;
