@@ -37,6 +37,7 @@
     <string name="name_problem">Problem Name:</string>
     <string name="grade">Grade:</string>
     <string name="coment">Comentario:</string>
+    <string name="thumbnail">thumbnail</string>
 
     <string-array name="grades">
         <item>6a</item>

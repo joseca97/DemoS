@@ -15,11 +15,17 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.example.manuel.demos.adapter.MainPagerAdapter;
+import com.example.manuel.demos.adapter.ProblemListAdapter;
+import com.example.manuel.demos.models.Boulder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,6 +34,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
@@ -42,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private View background;
 
     private int colorBlackOverlay;
+    private ListView mListView;
 
 
     @Override
@@ -84,13 +92,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//                if(position==0) {
-//                    background.setBackgroundColor(colorBlackOverlay);
-//                    background.setAlpha(1 - positionOffset);
-//                } else {
-//                    background.setBackgroundColor(colorBlackOverlay);
-//                    background.setAlpha(positionOffset);
-//                }
 
                 if(position + positionOffset > sumPositionAndPositionOffset) {
                     background.setBackgroundColor(colorBlackOverlay);
