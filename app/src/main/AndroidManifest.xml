@@ -61,7 +61,8 @@
         <activity
             android:name=".FullViewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".UserpageActivity"></activity>
+        <activity android:name=".UserpageActivity" />
+        <activity android:name=".RankingActivity"></activity>
     </application>
 
 </manifest>

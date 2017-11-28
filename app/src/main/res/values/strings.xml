@@ -42,6 +42,9 @@
     <string name="number_of_boulders">Number of ascent boulders:</string>
     <string name="points_text">Points:</string>
     <string name="thumbnail">thumbnail</string>
+    <string name="local">Local</string>
+    <string name="regional">Regional</string>
+    <string name="global">Global</string>
 
 
     <string-array name="grades">

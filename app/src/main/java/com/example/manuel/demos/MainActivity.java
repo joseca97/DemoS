@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.ag_view_pager);
         viewPager.setAdapter(adapter);
 
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
 
         background = findViewById(R.id.ag_background_view);
         colorBlackOverlay = ContextCompat.getColor(this, R.color.black_overlay);
@@ -248,6 +248,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void toAccount(View v){
         Intent intent = new Intent(MainActivity.this, UserpageActivity.class);
+        startActivity(intent);
+    }
+
+    public void toRanking(View v){
+        Intent intent = new Intent(this, RankingActivity.class);
         startActivity(intent);
     }
 

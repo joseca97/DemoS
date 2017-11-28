@@ -41,6 +41,10 @@
     <string name="ranking_position">Posicion en el ranking:</string>
     <string name="number_of_boulders">Numero de bloques encadenados:</string>
     <string name="points_text">Puntos:</string>
+    <string name="thumbnail">thumbnail</string>
+    <string name="local">Local</string>
+    <string name="regional">Regional</string>
+    <string name="global">Global</string>
 
     <string-array name="grades">
         <item>6a</item>
