@@ -56,6 +56,9 @@
         <activity
             android:name=".ColoreableActivity"
             android:label="ColoreableActivity" />
+        <activity
+            android:name=".ProblemDetailsActivity"
+            android:label="ProblemDetailsActivity" />
         <activity android:name=".ProblemData" />
         <activity android:name=".BoulderViewer" />
         <activity
